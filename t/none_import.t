@@ -1,5 +1,5 @@
 use strict;
-use Test::More tests => 73;
+use Test::More tests => 76;
 
 BEGIN {
 	use_ok('Perl6::Junction', 'none');
@@ -85,10 +85,13 @@ ok( not( 'g' lt none('g', 'h') ), 'lt negated switched');
 
 ok( none('a','b') == qr/\d+/,          '== regex');
 ok( qr/^[ab]$/ == none(3,4,5),         '== regex');
-ok( not( none(3,4,'b') == qr/[a-z]/ ),   '== regex negated');
-ok( not( qr/\d/ == none('a','b',5)), '== regex negated');
+ok( not( none(3,4,'b') == qr/[a-z]/ ), '== regex negated');
+ok( not( qr/\d/ == none('a','b',5)),   '== regex negated');
 
-ok( none(3,4,5) != qr/[a-z]/,        '!= regex');
-ok( none(3,3,5) != qr/\d{2}/,        '!= regex');
+ok( none(3,4,5) != qr/[0-9]/,         '!= regex');
+ok( qr/[0-9]/ != none(3,4,5),         '!= regex');
+ok( none(3,3,5) != qr/./,             '!= regex');
+ok( qr/./ != none(3,3,5),             '!= regex');
 ok( not( none('a','b',5) != qr/\d/ ), '!= regex negated');
+ok( not( qr/\d/ != none('a','b',5) ), '!= regex negated');
 

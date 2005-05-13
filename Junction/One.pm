@@ -1,6 +1,6 @@
 package Perl6::Junction::One;
 use strict;
-our $VERSION = '1.00';
+our $VERSION = '1.10';
 
 use overload(
 	'=='  => \&num_eq,
@@ -43,7 +43,7 @@ sub num_eq {
 
 
 sub num_ne {
-  return regex_eq(@_) if ref($_[1]) eq 'Regexp';
+  return regex_ne(@_) if ref($_[1]) eq 'Regexp';
   
 	my ($self, $test) = @_;
 	my $count = 0;

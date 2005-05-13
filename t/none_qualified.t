@@ -1,5 +1,5 @@
 use strict;
-use Test::More tests => 73;
+use Test::More tests => 76;
 
 BEGIN {
 	use_ok('Perl6::Junction');
@@ -85,10 +85,13 @@ ok( not( 'g' lt Perl6::Junction::none('g', 'h') ), 'lt negated switched');
 
 ok( Perl6::Junction::none('a','b') == qr/\d+/,          '== regex');
 ok( qr/^[ab]$/ == Perl6::Junction::none(3,4,5),         '== regex');
-ok( not( Perl6::Junction::none(3,4,'b') == qr/[a-z]/ ),   '== regex negated');
-ok( not( qr/\d/ == Perl6::Junction::none('a','b',5)), '== regex negated');
+ok( not( Perl6::Junction::none(3,4,'b') == qr/[a-z]/ ), '== regex negated');
+ok( not( qr/\d/ == Perl6::Junction::none('a','b',5)),   '== regex negated');
 
-ok( Perl6::Junction::none(3,4,5) != qr/[a-z]/,        '!= regex');
-ok( Perl6::Junction::none(3,3,5) != qr/\d{2}/,        '!= regex');
+ok( Perl6::Junction::none(3,4,5) != qr/[0-9]/,         '!= regex');
+ok( qr/[0-9]/ != Perl6::Junction::none(3,4,5),         '!= regex');
+ok( Perl6::Junction::none(3,3,5) != qr/./,             '!= regex');
+ok( qr/./ != Perl6::Junction::none(3,3,5),             '!= regex');
 ok( not( Perl6::Junction::none('a','b',5) != qr/\d/ ), '!= regex negated');
+ok( not( qr/\d/ != Perl6::Junction::none('a','b',5) ), '!= regex negated');
 

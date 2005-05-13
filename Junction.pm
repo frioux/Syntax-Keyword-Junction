@@ -7,7 +7,7 @@ use Perl6::Junction::None;
 use Perl6::Junction::One;
 
 require Exporter;
-our $VERSION = '1.00';
+our $VERSION = '1.10';
 
 our @ISA       = qw/ Exporter /;
 our @EXPORT_OK = qw/ all any none one /;
