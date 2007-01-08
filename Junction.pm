@@ -7,33 +7,30 @@ use Perl6::Junction::None;
 use Perl6::Junction::One;
 
 require Exporter;
-our $VERSION = '1.10';
+our $VERSION = '1.20_01';
 
-our @ISA       = qw/ Exporter /;
-our @EXPORT_OK = qw/ all any none one /;
-
+our @ISA = qw/ Exporter /;
+my @routines = qw/ all any none one /;
+our @EXPORT_OK = @routines;
+our %EXPORT_TAGS = ( ALL => [@routines] );
 
 sub all {
-  return Perl6::Junction::All->all(@_);
+    return Perl6::Junction::All->all(@_);
 }
-
 
 sub any {
-  return Perl6::Junction::Any->any(@_);
+    return Perl6::Junction::Any->any(@_);
 }
-
 
 sub none {
-  return Perl6::Junction::None->none(@_);
+    return Perl6::Junction::None->none(@_);
 }
 
-
 sub one {
-  return Perl6::Junction::One->one(@_);
+    return Perl6::Junction::One->one(@_);
 }
 
 1;
-
 
 __END__
 

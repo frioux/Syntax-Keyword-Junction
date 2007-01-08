@@ -1,7 +1,15 @@
-Changes in 1.10
+1.20_01 2007-01-08
 
-	Bugfix: error in none() and one() when comparing a Regexp object with !=
+    - Added :ALL export tag (RT #16429).
+    - Added bool and string overloading to stop fatal errors on
+      stringification (RT #24237).
+    - Removed duplicated tests.
+    - Ran files through perltidy.
 
-Changes in 1.00
+1.10 2005-05-13
 
-	Initial release, includes test suite.
+    - Bugfix: error in none() and one() when comparing a Regexp object with !=
+
+1.00 2005-05-13
+
+    - Initial release, includes test suite.
