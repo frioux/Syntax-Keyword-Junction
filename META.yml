@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:                Perl6-Junction
-version:             1.20_01
+version:             1.30000
 abstract:            ~
 license:             ~
 generated_by:        ExtUtils::MakeMaker version 6.31
