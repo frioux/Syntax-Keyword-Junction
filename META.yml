@@ -1,13 +1,14 @@
 --- #YAML:1.0
 name:                Perl6-Junction
-version:             1.30000
+version:             1.40000
 abstract:            ~
 license:             ~
-generated_by:        ExtUtils::MakeMaker version 6.31
+author:              ~
+generated_by:        ExtUtils::MakeMaker version 6.44
 distribution_type:   module
 requires:     
     Carp:                          0
     Test::More:                    0
 meta-spec:
-    url:     http://module-build.sourceforge.net/META-spec-v1.2.html
-    version: 1.2
+    url:     http://module-build.sourceforge.net/META-spec-v1.3.html
+    version: 1.3

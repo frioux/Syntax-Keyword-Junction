@@ -1,5 +1,5 @@
 use strict;
-use Test::More tests => 78;
+use Test::More tests => 81;
 
 use Perl6::Junction 'none';
 
@@ -97,3 +97,10 @@ ok( !none( undef, 'a' ), '! bool' );
 
 like( none( 1, 2 ), qr/^Perl6::Junction::None=/, 'stringified to ref' );
 
+my @data = qw(3 4 5 6 7);
+my $junction = none(@data);
+can_ok $junction, 'values';
+my @values = $junction->values;
+is_deeply \@values, \@data, 'values() in list context';
+my $values = $junction->values;
+is_deeply $values, \@data, 'values() in scalar context';

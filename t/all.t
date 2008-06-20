@@ -1,5 +1,5 @@
 use strict;
-use Test::More tests => 87;
+use Test::More tests => 90;
 
 use Perl6::Junction 'all';
 
@@ -105,3 +105,11 @@ ok( !all( '', 'a' ), '! bool' );
 ok( !all( 'a', undef, 'c' ), '! bool' );
 
 like( all( 1, 2 ), qr/^Perl6::Junction::All=/, 'stringified to ref' );
+
+my @data = qw(3 4 5 6 7);
+my $junction = all(@data);
+can_ok $junction, 'values';
+my @values = $junction->values;
+is_deeply \@values, \@data, 'values() in list context';
+my $values = $junction->values;
+is_deeply $values, \@data, 'values() in scalar context';

@@ -7,7 +7,7 @@ use Perl6::Junction::None;
 use Perl6::Junction::One;
 
 require Exporter;
-our $VERSION = '1.30000';
+our $VERSION = '1.40000';
 
 our @ISA = qw/ Exporter /;
 my @routines = qw/ all any none one /;
@@ -15,19 +15,19 @@ our @EXPORT_OK = @routines;
 our %EXPORT_TAGS = ( ALL => [@routines] );
 
 sub all {
-    return Perl6::Junction::All->all(@_);
+    return Perl6::Junction::All->new(@_);
 }
 
 sub any {
-    return Perl6::Junction::Any->any(@_);
+    return Perl6::Junction::Any->new(@_);
 }
 
 sub none {
-    return Perl6::Junction::None->none(@_);
+    return Perl6::Junction::None->new(@_);
 }
 
 sub one {
-    return Perl6::Junction::One->one(@_);
+    return Perl6::Junction::One->new(@_);
 }
 
 1;
@@ -124,11 +124,22 @@ Returns an object which overloads the following operators:
 Returns true only if B<one and only one> argument tests true according to 
 the operator used.
 
+=head1 ALTERING JUNCTIONS
+
+You cannot alter junctions.  Instead, you can create new junctions out of old
+junctions.  You can do this by calling the C<values> method on a junction.
+
+ my $numbers = any(qw/1 2 3 4 5/);
+ print $numbers == 3 ? 'Yes' : 'No';   # Yes
+
+ $numbers = any( grep { $_ != 3 } $numbers->values );
+ print $numbers == 3 ? 'Yes' : 'No';   # No
+
 =head1 EXPORT
 
 'all', 'any', 'none', 'one', as requested.
 
-All subroutines can be called by it's fully qualified name, if you don't 
+All subroutines can be called by its fully qualified name, if you don't 
 want to export them.
 
   use Perl6::Junction;
@@ -168,6 +179,11 @@ of Junctions".
 =head1 AUTHOR
 
 Carl Franks
+
+=head1 ACKNOWLEDGEMENTS
+
+Thanks to C<Curtis "Ovid" Poe> for the L</"ALTERING JUNCTIONS"> changes in
+release C<0.40000>.
 
 =head1 COPYRIGHT AND LICENSE
 

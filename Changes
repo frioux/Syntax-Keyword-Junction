@@ -1,3 +1,8 @@
+1.40000 2008-06-20
+
+    - Added 'values' method to ensure that we can fetch data from junctions
+      and create new junctions based upon old ones.
+
 1.30000 2007-05-11
 
 	- Non-development release.

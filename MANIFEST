@@ -2,6 +2,7 @@ Changes
 lib/Perl6/Junction.pm
 lib/Perl6/Junction/All.pm
 lib/Perl6/Junction/Any.pm
+lib/Perl6/Junction/Base.pm
 lib/Perl6/Junction/None.pm
 lib/Perl6/Junction/One.pm
 Makefile.PL

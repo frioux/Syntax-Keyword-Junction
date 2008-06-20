@@ -1,29 +1,8 @@
 package Perl6::Junction::All;
 use strict;
-our $VERSION = '1.30000';
+our $VERSION = '1.40000';
 
-use overload(
-    '=='   => \&num_eq,
-    '!='   => \&num_ne,
-    '>='   => \&num_ge,
-    '>'    => \&num_gt,
-    '<='   => \&num_le,
-    '<'    => \&num_lt,
-    'eq'   => \&str_eq,
-    'ne'   => \&str_ne,
-    'ge'   => \&str_ge,
-    'gt'   => \&str_gt,
-    'le'   => \&str_le,
-    'lt'   => \&str_lt,
-    'bool' => \&bool,
-    '""'   => sub {shift},
-);
-
-sub all {
-    my ( $proto, @param ) = @_;
-
-    return bless \@param, $proto;
-}
+use base 'Perl6::Junction::Base';
 
 sub num_eq {
     return regex_eq(@_) if ref( $_[1] ) eq 'Regexp';
