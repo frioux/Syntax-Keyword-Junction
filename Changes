@@ -1,3 +1,4 @@
-0.00100 2010-11-06
+Revision history for {{$dist->name}}
 
+{{$NEXT}}
     - Initial fork of Perl6::Junction
