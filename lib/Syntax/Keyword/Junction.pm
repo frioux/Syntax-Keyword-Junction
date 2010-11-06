@@ -162,11 +162,11 @@ Add overloading for arithmetic operators, such that this works:
 
   if ($result == 8) {...}
 
-=head1 SUPPORT / BUGS
-
-Submit to the CPAN bugtracker L<http://rt.cpan.org>
-
 =head1 SEE ALSO
+
+This module is actually a fork of L<Perl6::Junction> with very few
+(initial) changes.  The reason being that we want to avoid the
+incendiary name containing Perl6.
 
 L<Quantum::Superpositions> provides the same functionality as this, and
 more. However, this module provides this limited functionality at a much
@@ -175,22 +175,6 @@ improvment.
 
 L<http://dev.perl.org/perl6/doc/design/exe/E06.html> - "The Wonderful World
 of Junctions".
-
-=head1 AUTHOR
-
-Carl Franks
-
-=head1 ACKNOWLEDGEMENTS
-
-Thanks to C<Curtis "Ovid" Poe> for the L</"ALTERING JUNCTIONS"> changes in
-release C<0.40000>.
-
-=head1 COPYRIGHT AND LICENSE
-
-Copyright 2005, Carl Franks.  All rights reserved.
-
-This library is free software; you can redistribute it and/or modify it under
-the same terms as Perl itself (L<perlgpl>, L<perlartistic>).
 
 =cut
 
