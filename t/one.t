@@ -1,7 +1,7 @@
 use strict;
 use Test::More tests => 98;
 
-use Perl6::Junction 'one';
+use Syntax::Keyword::Junction 'one';
 
 ok( one( 2, 3 ) == 2,   '==' );
 ok( one( 2, 3.0 ) == 3, '==' );
@@ -112,7 +112,7 @@ ok( one( 'a',   '' ),  'bool' );
 ok( !one( undef, 0, '' ), '! bool' );
 ok( !one( 'a', 'b' ), '! bool' );
 
-like( one( 1, 2 ), qr/^Perl6::Junction::One=/, 'stringified to ref' );
+like( one( 1, 2 ), qr/^Syntax::Keyword::Junction::One=/, 'stringified to ref' );
 
 my @data = qw(3 4 5 6 7);
 my $junction = one(@data);

@@ -1,4 +1,4 @@
-package Perl6::Junction::Base;
+package Syntax::Keyword::Junction::Base;
 use strict;
 our $VERSION = '1.40000';
 

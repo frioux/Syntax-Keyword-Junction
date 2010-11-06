@@ -1,8 +1,8 @@
-package Perl6::Junction::All;
+package Syntax::Keyword::Junction::Any;
 use strict;
 our $VERSION = '1.40000';
 
-use base 'Perl6::Junction::Base';
+use base 'Syntax::Keyword::Junction::Base';
 
 sub num_eq {
     return regex_eq(@_) if ref( $_[1] ) eq 'Regexp';
@@ -10,10 +10,10 @@ sub num_eq {
     my ( $self, $test ) = @_;
 
     for (@$self) {
-        return unless $_ == $test;
+        return 1 if $_ == $test;
     }
 
-    return 1;
+    return;
 }
 
 sub num_ne {
@@ -22,10 +22,10 @@ sub num_ne {
     my ( $self, $test ) = @_;
 
     for (@$self) {
-        return unless $_ != $test;
+        return 1 if $_ != $test;
     }
 
-    return 1;
+    return;
 }
 
 sub num_ge {
@@ -34,10 +34,10 @@ sub num_ge {
     return num_le( $self, $test ) if $switch;
 
     for (@$self) {
-        return unless $_ >= $test;
+        return 1 if $_ >= $test;
     }
 
-    return 1;
+    return;
 }
 
 sub num_gt {
@@ -46,10 +46,10 @@ sub num_gt {
     return num_lt( $self, $test ) if $switch;
 
     for (@$self) {
-        return unless $_ > $test;
+        return 1 if $_ > $test;
     }
 
-    return 1;
+    return;
 }
 
 sub num_le {
@@ -58,10 +58,10 @@ sub num_le {
     return num_ge( $self, $test ) if $switch;
 
     for (@$self) {
-        return unless $_ <= $test;
+        return 1 if $_ <= $test;
     }
 
-    return 1;
+    return;
 }
 
 sub num_lt {
@@ -70,30 +70,30 @@ sub num_lt {
     return num_gt( $self, $test ) if $switch;
 
     for (@$self) {
-        return unless $_ < $test;
+        return 1 if $_ < $test;
     }
 
-    return 1;
+    return;
 }
 
 sub str_eq {
     my ( $self, $test ) = @_;
 
     for (@$self) {
-        return unless $_ eq $test;
+        return 1 if $_ eq $test;
     }
 
-    return 1;
+    return;
 }
 
 sub str_ne {
     my ( $self, $test ) = @_;
 
     for (@$self) {
-        return unless $_ ne $test;
+        return 1 if $_ ne $test;
     }
 
-    return 1;
+    return;
 }
 
 sub str_ge {
@@ -102,10 +102,10 @@ sub str_ge {
     return str_le( $self, $test ) if $switch;
 
     for (@$self) {
-        return unless $_ ge $test;
+        return 1 if $_ ge $test;
     }
 
-    return 1;
+    return;
 }
 
 sub str_gt {
@@ -114,10 +114,10 @@ sub str_gt {
     return str_lt( $self, $test ) if $switch;
 
     for (@$self) {
-        return unless $_ gt $test;
+        return 1 if $_ gt $test;
     }
 
-    return 1;
+    return;
 }
 
 sub str_le {
@@ -126,10 +126,10 @@ sub str_le {
     return str_ge( $self, $test ) if $switch;
 
     for (@$self) {
-        return unless $_ le $test;
+        return 1 if $_ le $test;
     }
 
-    return 1;
+    return;
 }
 
 sub str_lt {
@@ -138,40 +138,40 @@ sub str_lt {
     return str_gt( $self, $test ) if $switch;
 
     for (@$self) {
-        return unless $_ lt $test;
+        return 1 if $_ lt $test;
     }
 
-    return 1;
+    return;
 }
 
 sub regex_eq {
     my ( $self, $test, $switch ) = @_;
 
     for (@$self) {
-        return unless $_ =~ $test;
+        return 1 if $_ =~ $test;
     }
 
-    return 1;
+    return;
 }
 
 sub regex_ne {
     my ( $self, $test, $switch ) = @_;
 
     for (@$self) {
-        return unless $_ !~ $test;
+        return 1 if $_ !~ $test;
     }
 
-    return 1;
+    return;
 }
 
 sub bool {
     my ($self) = @_;
 
     for (@$self) {
-        return unless $_;
+        return 1 if $_;
     }
 
-    return 1;
+    return;
 }
 
 1;

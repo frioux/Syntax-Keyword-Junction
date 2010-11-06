@@ -1,7 +1,7 @@
 use strict;
 use Test::More tests => 81;
 
-use Perl6::Junction 'none';
+use Syntax::Keyword::Junction 'none';
 
 ok( none( 2, 3.0 ) == 4, '==' );
 ok( not( none( 2, 3.0 ) == 3 ), '== negated' );
@@ -95,7 +95,7 @@ ok( not( qr/\d/ != none( 'a', 'b', 5 ) ), '!= regex negated' );
 ok( none( undef, '', 0, 0.0 ), 'bool' );
 ok( !none( undef, 'a' ), '! bool' );
 
-like( none( 1, 2 ), qr/^Perl6::Junction::None=/, 'stringified to ref' );
+like( none( 1, 2 ), qr/^Syntax::Keyword::Junction::None=/, 'stringified to ref' );
 
 my @data = qw(3 4 5 6 7);
 my $junction = none(@data);

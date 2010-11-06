@@ -1,8 +1,8 @@
-package Perl6::Junction::One;
+package Syntax::Keyword::Junction::One;
 use strict;
 our $VERSION = '1.40000';
 
-use base 'Perl6::Junction::Base';
+use base 'Syntax::Keyword::Junction::Base';
 
 sub num_eq {
     return regex_eq(@_) if ref( $_[1] ) eq 'Regexp';

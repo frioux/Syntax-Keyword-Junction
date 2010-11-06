@@ -1,7 +1,7 @@
 use strict;
 use Test::More tests => 90;
 
-use Perl6::Junction 'all';
+use Syntax::Keyword::Junction 'all';
 
 ok( all( 3, 3.0 ) == 3, '==' );
 ok( all( 3, 3 ) == 3,   '==' );
@@ -104,7 +104,7 @@ ok( !all( 2,  0 ),   '! bool' );
 ok( !all( '', 'a' ), '! bool' );
 ok( !all( 'a', undef, 'c' ), '! bool' );
 
-like( all( 1, 2 ), qr/^Perl6::Junction::All=/, 'stringified to ref' );
+like( all( 1, 2 ), qr/^Syntax::Keyword::Junction::All=/, 'stringified to ref' );
 
 my @data = qw(3 4 5 6 7);
 my $junction = all(@data);

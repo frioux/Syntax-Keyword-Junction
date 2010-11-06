@@ -1,7 +1,7 @@
 use strict;
 use Test::More tests => 75;
 
-use Perl6::Junction 'any';
+use Syntax::Keyword::Junction 'any';
 
 ok( any( 2, 3.0 ) == 2, '==' );
 ok( any( 2, 3.0 ) == 3, '==' );
@@ -89,7 +89,7 @@ ok( any( 2,      0 ),   'bool' );
 ok( any( '',     'a' ), 'bool' );
 ok( !any( undef, 0 ),   '! bool' );
 
-like( any( 1, 2 ), qr/^Perl6::Junction::Any=/, 'stringified to ref' );
+like( any( 1, 2 ), qr/^Syntax::Keyword::Junction::Any=/, 'stringified to ref' );
 
 my @data = qw(3 4 5 6 7);
 my $junction = any(@data);

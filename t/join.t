@@ -1,7 +1,7 @@
 use strict;
 use Test::More tests => 21;
 
-use Perl6::Junction ':ALL';
+use Syntax::Keyword::Junction ':ALL';
 
 ok( all( 3, 3.0 ) == all( 3, 3.0 ), '==' );
 ok( all( 3, 3.0 ) == any( 3, 3.0 ), '==' );
