@@ -1,6 +1,7 @@
 package Syntax::Keyword::Junction::None;
+
 use strict;
-our $VERSION = '1.40000';
+use warnings;
 
 use base 'Syntax::Keyword::Junction::Base';
 

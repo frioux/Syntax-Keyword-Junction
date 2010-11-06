@@ -1,6 +1,7 @@
 package Syntax::Keyword::Junction::Base;
+
 use strict;
-our $VERSION = '1.40000';
+use warnings;
 
 use overload(
     '=='   => "num_eq",

@@ -1,5 +1,7 @@
 package Syntax::Keyword::Junction;
+
 use strict;
+use warnings;
 
 use Syntax::Keyword::Junction::All;
 use Syntax::Keyword::Junction::Any;
@@ -7,7 +9,6 @@ use Syntax::Keyword::Junction::None;
 use Syntax::Keyword::Junction::One;
 
 require Exporter;
-our $VERSION = '1.40000';
 
 our @ISA = qw/ Exporter /;
 my @routines = qw/ all any none one /;
