@@ -8,12 +8,14 @@ require Syntax::Keyword::Junction::Any;
 require Syntax::Keyword::Junction::None;
 require Syntax::Keyword::Junction::One;
 
-require Exporter;
-
-our @ISA = qw/ Exporter /;
-my @routines = qw/ all any none one /;
-our @EXPORT_OK = @routines;
-our %EXPORT_TAGS = ( ALL => [@routines] );
+use Sub::Exporter -setup => {
+   exports => [qw( all any none one )],
+   groups => {
+      default => [qw( all any none one )],
+      # for the switch from Exporter
+      ALL     => [qw( all any none one )],
+   },
+};
 
 sub all  { Syntax::Keyword::Junction::All->new(@_)  }
 sub any  { Syntax::Keyword::Junction::Any->new(@_)  }
@@ -53,6 +55,14 @@ Syntax::Keyword::Junction - Perl6 style Junction operators in Perl5.
   }
 
   if (one(@answer) == 42) {
+    ...
+  }
+
+or if you want to rename an export, use L<Sub::Exporter> options:
+
+  use Syntax::Keyword::Junction any => { -as => 'robot_any' };
+
+  if (robot_any(@grant) eq 'su') {
     ...
   }
 
