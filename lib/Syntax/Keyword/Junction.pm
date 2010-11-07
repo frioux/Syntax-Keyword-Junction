@@ -26,10 +26,6 @@ sub one  { Syntax::Keyword::Junction::One->new(@_)  }
 
 __END__
 
-=head1 NAME
-
-Syntax::Keyword::Junction - Perl6 style Junction operators in Perl5.
-
 =head1 SYNOPSIS
 
   use Syntax::Keyword::Junction qw/ all any none one /;
