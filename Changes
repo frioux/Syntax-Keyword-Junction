@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+    - Add support for syntax.pm
     - Switch to Sub::Exporter
 
 0.001000  2010-11-06 19:22:48 CST6CDT
