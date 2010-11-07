@@ -3,10 +3,10 @@ package Syntax::Keyword::Junction;
 use strict;
 use warnings;
 
-use Syntax::Keyword::Junction::All;
-use Syntax::Keyword::Junction::Any;
-use Syntax::Keyword::Junction::None;
-use Syntax::Keyword::Junction::One;
+require Syntax::Keyword::Junction::All;
+require Syntax::Keyword::Junction::Any;
+require Syntax::Keyword::Junction::None;
+require Syntax::Keyword::Junction::One;
 
 require Exporter;
 
@@ -15,21 +15,10 @@ my @routines = qw/ all any none one /;
 our @EXPORT_OK = @routines;
 our %EXPORT_TAGS = ( ALL => [@routines] );
 
-sub all {
-    return Syntax::Keyword::Junction::All->new(@_);
-}
-
-sub any {
-    return Syntax::Keyword::Junction::Any->new(@_);
-}
-
-sub none {
-    return Syntax::Keyword::Junction::None->new(@_);
-}
-
-sub one {
-    return Syntax::Keyword::Junction::One->new(@_);
-}
+sub all  { Syntax::Keyword::Junction::All->new(@_)  }
+sub any  { Syntax::Keyword::Junction::Any->new(@_)  }
+sub none { Syntax::Keyword::Junction::None->new(@_) }
+sub one  { Syntax::Keyword::Junction::One->new(@_)  }
 
 1;
 
