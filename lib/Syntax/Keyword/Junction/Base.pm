@@ -20,6 +20,8 @@ use overload(
     '""'   => sub {shift},
 );
 
+use if ($] >= 5.010001), overload => '~~' => 'match';
+
 sub new {
     my ( $class, @param ) = @_;
     return bless \@param, $class;
@@ -28,6 +30,12 @@ sub new {
 sub values {
     my $self = shift;
     return wantarray ? @$self : [ @$self ];
+}
+
+sub map {
+    my ( $self, $code ) = @_;
+    my $class = ref $self;
+    $class->new( map { $code->( $_ ) } $self->values );
 }
 
 1;
