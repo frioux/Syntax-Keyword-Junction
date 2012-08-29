@@ -1,5 +1,5 @@
 use strict;
-use Test::More tests => 75;
+use Test::More tests => 76;
 
 use Syntax::Keyword::Junction 'any';
 
@@ -98,3 +98,6 @@ my @values = $junction->values;
 is_deeply \@values, \@data, 'values() in list context';
 my $values = $junction->values;
 is_deeply $values, \@data, 'values() in scalar context';
+
+my $plus1 = $junction->map( sub { $_ + 1 } );
+is_deeply( [ $plus1->values ], [ qw( 4 5 6 7 8 ) ], "map method");
