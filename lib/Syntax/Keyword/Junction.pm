@@ -10,7 +10,7 @@ require Syntax::Keyword::Junction::Any;
 require Syntax::Keyword::Junction::None;
 require Syntax::Keyword::Junction::One;
 
-use Sub::Exporter -setup => {
+use Sub::Exporter::Progressive -setup => {
    exports => [qw( all any none one )],
    groups => {
       default => [qw( all any none one )],
