@@ -32,5 +32,11 @@ sub values {
     return wantarray ? @$self : [ @$self ];
 }
 
+sub map {
+    my ( $self, $code ) = @_;
+    my $class = ref $self;
+    $class->new( map { $code->( $_ ) } $self->values );
+}
+
 1;
 
