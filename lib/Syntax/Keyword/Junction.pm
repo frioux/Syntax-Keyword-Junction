@@ -133,6 +133,13 @@ junctions.  You can do this by calling the C<values> method on a junction.
  $numbers = any( grep { $_ != 3 } $numbers->values );
  print $numbers == 3 ? 'Yes' : 'No';   # No
 
+You can also use the C<map> method:
+
+ my $numbers = any(qw/1 2 3 4 5/);
+ my $prime   = $numbers->map( \&is_prime );
+
+ say for $prime->values; # prints 0, 1, 1, 0, 1
+
 =head1 EXPORT
 
 'all', 'any', 'none', 'one', as requested.
