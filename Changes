@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.003000  2012-08-29 10:10:08 America/Chicago
     - Add ~~ support for 5.10.1 and higher (RJBS)
     - Add ->map method on junctions for easy creation of new junctions (RJBS)
     - Switch to Sub::Exporter::Progressive
