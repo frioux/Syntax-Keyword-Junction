@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+    - Add ~~ support for 5.10.1 and higher (RJBS)
+    - Add ->map method on junctions for easy creation of new junctions (RJBS)
 
 0.002001  2010-11-07 22:44:18 CST6CDT
     - Add syntax.pm as a dep
