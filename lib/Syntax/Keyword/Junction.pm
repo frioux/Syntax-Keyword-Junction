@@ -3,6 +3,8 @@ package Syntax::Keyword::Junction;
 use strict;
 use warnings;
 
+# VERSION
+
 # ABSTRACT: Perl6 style Junction operators in Perl5
 
 require Syntax::Keyword::Junction::All;

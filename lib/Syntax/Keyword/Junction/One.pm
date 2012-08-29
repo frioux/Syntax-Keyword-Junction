@@ -3,6 +3,8 @@ package Syntax::Keyword::Junction::One;
 use strict;
 use warnings;
 
+# VERSION
+
 use base 'Syntax::Keyword::Junction::Base';
 
 BEGIN {

@@ -3,6 +3,8 @@ package Syntax::Feature::Junction;
 use strict;
 use warnings;
 
+# VERSION
+
 # ABSTRACT: Provide keywords for any, all, none, or one
 
 require Syntax::Keyword::Junction;

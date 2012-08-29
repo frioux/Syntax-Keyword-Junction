@@ -3,6 +3,8 @@ package Syntax::Keyword::Junction::Base;
 use strict;
 use warnings;
 
+# VERSION
+
 use overload(
     '=='   => "num_eq",
     '!='   => "num_ne",
