@@ -1,6 +1,8 @@
 use strict;
 use Test::More;
-plan skip_all => "~~ support requires v5.10.1" unless $] >= 5.010001;
+BEGIN {
+    plan skip_all => "~~ support requires v5.10.1" unless $] >= 5.010001;
+}
 
 plan tests => 16;
 
