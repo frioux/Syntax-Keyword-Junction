@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+    - Fix tests for perl 5.8 (Rob Hoelz)
 
 0.003000  2012-08-29 10:10:08 America/Chicago
     - Add ~~ support for 5.10.1 and higher (RJBS)
