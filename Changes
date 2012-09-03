@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.003001  2012-09-02 22:06:43 America/Chicago
     - Fix tests for perl 5.8 (Rob Hoelz)
 
 0.003000  2012-08-29 10:10:08 America/Chicago
