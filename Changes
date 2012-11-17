@@ -2,6 +2,9 @@ Revision history for {{$dist->name}}
 
 {{$NEXT}}
 
+0.003002  2012-11-17 16:20:07 CST6CDT
+    - Put MetaYAML back in dist
+
 0.003001  2012-09-02 22:06:43 America/Chicago
     - Fix tests for perl 5.8 (Rob Hoelz)
 
