@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.003003  2013-04-10 06:38:29 CST6CDT
     - Silence warnings above 5.17.10
 
 0.003002  2012-11-17 16:20:07 CST6CDT
