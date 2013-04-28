@@ -9,9 +9,10 @@ use base 'Syntax::Keyword::Junction::Base';
 
 BEGIN {
   if ($] >= 5.010001) {
-    eval q<
+    eval q|
 sub match {
     my ( $self, $other, $is_rhs ) = @_;
+    no if $] > 5.017010, warnings => 'experimental::smartmatch';
 
     if ($is_rhs) {
         for (@$self) {
@@ -27,7 +28,7 @@ sub match {
 
     return 1;
 }
->
+|
   }
 }
 
