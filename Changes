@@ -1,31 +1,31 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
-    - Set version for Test::More dep (reported by ppisar)
+ - Set version for Test::More dep (reported by ppisar)
 
 0.003004  2013-04-28 19:00:36 CST6CDT
-    - Silence even more warnings above 5.17.10 (RJBS)
+ - Silence even more warnings above 5.17.10 (RJBS)
 
 0.003003  2013-04-10 06:38:29 CST6CDT
-    - Silence warnings above 5.17.10
+ - Silence warnings above 5.17.10
 
 0.003002  2012-11-17 16:20:07 CST6CDT
-    - Put MetaYAML back in dist
+ - Put MetaYAML back in dist
 
 0.003001  2012-09-02 22:06:43 America/Chicago
-    - Fix tests for perl 5.8 (Rob Hoelz)
+ - Fix tests for perl 5.8 (Rob Hoelz)
 
 0.003000  2012-08-29 10:10:08 America/Chicago
-    - Add ~~ support for 5.10.1 and higher (RJBS)
-    - Add ->map method on junctions for easy creation of new junctions (RJBS)
-    - Switch to Sub::Exporter::Progressive
+ - Add ~~ support for 5.10.1 and higher (RJBS)
+ - Add ->map method on junctions for easy creation of new junctions (RJBS)
+ - Switch to Sub::Exporter::Progressive
 
 0.002001  2010-11-07 22:44:18 CST6CDT
-    - Add syntax.pm as a dep
+ - Add syntax.pm as a dep
 
 0.002000  2010-11-06 22:47:32 CST6CDT
-    - Add support for syntax.pm
-    - Switch to Sub::Exporter
+ - Add support for syntax.pm
+ - Switch to Sub::Exporter
 
 0.001000  2010-11-06 19:22:48 CST6CDT
-    - Initial fork of Perl6::Junction
+ - Initial fork of Perl6::Junction
