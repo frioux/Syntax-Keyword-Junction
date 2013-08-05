@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.003005  2013-08-05 08:05:47 CST6CDT
  - Set version for Test::More dep (reported by ppisar)
 
 0.003004  2013-04-28 19:00:36 CST6CDT
