@@ -24,10 +24,7 @@ use overload(
 
 use if ($] >= 5.010001), overload => '~~' => 'match';
 
-sub new {
-    my ( $class, @param ) = @_;
-    return bless \@param, $class;
-}
+sub new { bless \@_, shift }
 
 sub values {
     my $self = shift;
