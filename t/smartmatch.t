@@ -1,5 +1,8 @@
 use strict;
 use Test::More;
+use Test::Requires {
+   'Sub::Exporter' => 0.986,
+};
 no if $] > 5.017010, warnings => 'experimental::smartmatch';
 BEGIN {
     plan skip_all => "~~ support requires v5.10.1" unless $] >= 5.010001;

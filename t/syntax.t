@@ -4,6 +4,9 @@ use strict;
 use warnings;
 
 use Test::More;
+use Test::Requires {
+   'Sub::Exporter' => 0.986,
+};
 
 use syntax junction => {
    -all => { -prefix => 'syntax_' }

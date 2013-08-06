@@ -3,6 +3,7 @@ Revision history for {{$dist->name}}
 {{$NEXT}}
  - Finally really silence warnings above 5.17.10
  - Remove useless array copy to measurably improve performance (Maxime Soulé)
+ - Make tests pass even if Sub::Exporter is not installed
 
 0.003005  2013-08-05 08:05:47 CST6CDT
  - Set version for Test::More dep (reported by ppisar)
