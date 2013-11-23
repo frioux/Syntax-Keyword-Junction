@@ -2,6 +2,9 @@ Revision history for {{$dist->name}}
 
 {{$NEXT}}
 
+0.003007  2013-11-23 14:28:14 America/Chicago
+ - Minor typo fixes
+
 0.003006  2013-08-06 18:16:08 CST6CDT
  - Finally really silence warnings above 5.17.10
  - Remove useless array copy to measurably improve performance (Maxime Soulé)
