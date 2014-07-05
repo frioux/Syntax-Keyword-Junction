@@ -5,7 +5,7 @@ use warnings;
 
 # VERSION
 
-use base 'Syntax::Keyword::Junction::Base';
+use parent 'Syntax::Keyword::Junction::Base';
 
 BEGIN {
   if ($] >= 5.010001) {
