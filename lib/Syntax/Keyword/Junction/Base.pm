@@ -20,9 +20,9 @@ use overload(
     'lt'   => "str_lt",
     'bool' => "bool",
     '""'   => sub {shift},
+    $] >= 5.010001 ? ('~~' => 'match') : (),
 );
 
-use if ($] >= 5.010001), overload => '~~' => 'match';
 
 sub new { bless \@_, shift }
 
