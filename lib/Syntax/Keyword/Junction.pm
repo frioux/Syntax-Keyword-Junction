@@ -2,6 +2,7 @@ package Syntax::Keyword::Junction;
 
 use strict;
 use warnings;
+use 5.006;
 
 # VERSION
 
