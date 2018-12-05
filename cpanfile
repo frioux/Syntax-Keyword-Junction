@@ -5,5 +5,6 @@ requires 'parent';   # for perl < 5.10.1
 on test => sub {
    requires 'Test::More' => 0.88;
    requires 'Test::Requires' => 0.07;
+   requires 'Test::Pod' => 0;
 };
 
