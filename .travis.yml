@@ -19,6 +19,7 @@ before_install:
 install:
    - export RELEASE_TESTING=1 AUTOMATED_TESTING=1 AUTHOR_TESTING=1 HARNESS_OPTIONS=c HARNESS_TIMER=1
    - cpanm --quiet --notest Sub::Exporter
+   - if [ "$PERLBREW_PERL" = "5.8" ]; then cpanm --quiet --notest Devel::Cover~"<=1.23"; fi
    - cpanm --quiet --notest Devel::Cover::Report::Coveralls
    - cpanm --quiet --notest --installdeps .
 
