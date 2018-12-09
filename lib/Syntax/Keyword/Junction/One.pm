@@ -9,6 +9,7 @@ use parent 'Syntax::Keyword::Junction::Base';
 
 BEGIN {
   if ($] >= 5.010001) {
+    ## no critic
     eval q|
 sub match {
     no if $] > 5.017010, warnings => 'experimental::smartmatch';
