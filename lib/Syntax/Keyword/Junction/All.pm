@@ -9,6 +9,7 @@ use parent 'Syntax::Keyword::Junction::Base';
 
 BEGIN {
   if ($] >= 5.010001) {
+    ## no critic
     eval q|
 sub match {
     my ( $self, $other, $is_rhs ) = @_;
