@@ -47,7 +47,7 @@ __END__
     ...
   }
 
-  if (all(@input) <= @limits) {
+  if (all(@input) <= scalar @limits) {
     ...
   }
 
