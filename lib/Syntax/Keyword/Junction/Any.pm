@@ -7,32 +7,6 @@ use warnings;
 
 use parent 'Syntax::Keyword::Junction::Base';
 
-BEGIN {
-  if ($] >= 5.010001) {
-    ## no critic
-    eval q|
-sub match {
-    no if $] > 5.017010, warnings => 'experimental::smartmatch';
-    my ( $self, $other, $is_rhs ) = @_;
-
-    if ($is_rhs) {
-        for (@$self) {
-            return 1 if $other ~~ $_;
-        }
-
-        return;
-    }
-
-    for (@$self) {
-        return 1 if $_ ~~ $other;
-    }
-
-    return;
-}
-|
-  }
-}
-
 sub num_eq {
     return regex_eq(@_) if ref( $_[1] ) eq 'Regexp';
 
