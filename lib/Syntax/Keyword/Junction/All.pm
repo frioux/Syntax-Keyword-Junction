@@ -8,12 +8,13 @@ use warnings;
 use parent 'Syntax::Keyword::Junction::Base';
 
 BEGIN {
-  if ($] >= 5.010001) {
+  if ($] >= 5.010001 and $] < 5.042000) {
     ## no critic
     eval q|
 sub match {
     my ( $self, $other, $is_rhs ) = @_;
     no if $] > 5.017010, warnings => 'experimental::smartmatch';
+    no if $] >= 5.038000, warnings => 'deprecated::smartmatch';
 
     if ($is_rhs) {
         for (@$self) {

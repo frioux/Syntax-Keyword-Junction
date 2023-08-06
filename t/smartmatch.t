@@ -5,8 +5,12 @@ use Test::Requires {
 };
 no if $] > 5.017010, warnings => 'experimental::smartmatch';
 BEGIN {
-    plan skip_all => "~~ support requires v5.10.1" unless $] >= 5.010001;
+    unless ($] >= 5.010001 && $] < 5.042000) {
+        plan skip_all => "~~ support requires Perl version >= 5.10.1 and < 5.42.0";
+    }
 }
+
+no if $] >= 5.038000, warnings => 'deprecated::smartmatch';
 
 plan tests => 16;
 
